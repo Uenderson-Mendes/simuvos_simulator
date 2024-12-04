@@ -23,4 +23,4 @@ Consulte a seção sobre [execução de testes](https://facebook.github.io/creat
 
 # Exemplo em execução na web
 
-  Acesse aqui[SimuVos]((https://simuvos-simulator.vercel.app/)).
+  Acesse aqui[SimuVos]([https://simuvos-simulator.vercel.app/]).
