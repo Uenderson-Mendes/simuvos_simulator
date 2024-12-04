@@ -201,7 +201,7 @@ export const ProcessManager = () => {
   <div className="me-3 dedlocktst" style={{  padding: '10px' }}>
   <DeadlockManager processes={processes} />
   <div className='totalpm'>
-  <h5>Total de Processos Criados: {totalProcesses}</h5>
+  <h5>Total de Processos : {totalProcesses}</h5>
 
 
   </div>
