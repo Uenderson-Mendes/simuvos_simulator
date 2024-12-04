@@ -201,7 +201,7 @@ export const ProcessManager = () => {
   <div className="me-3 dedlocktst" style={{  padding: '10px' }}>
   <DeadlockManager processes={processes} />
   <div className='totalpm'>
-  <h5>Total de Processos : {totalProcesses}</h5>
+  <h5>Total de Processos: {totalProcesses}</h5>
 
 
   </div>
@@ -212,7 +212,7 @@ export const ProcessManager = () => {
 </div>
 <div className="col-md-3 shadow position-absolute" style={{ right: 0, top: 90, height: '48vh', overflowY: 'auto', backgroundColor: '#bababa;', borderRight: '1px solid #dee2e6' }}>
       <div className="shadow-sm rounded p-2" style={{ backgroundColor: '#f8f9fa' }}>
-        <h4 className="text-center">Gerenciador de Memória</h4>
+        <h4 className="text-center">Memória</h4>
         <MemoryManager processes={processes} />
         
       </div>
