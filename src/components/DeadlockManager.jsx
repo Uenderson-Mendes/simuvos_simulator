@@ -67,6 +67,8 @@ export const DeadlockManager = ({ processes }) => {
       {showDeadlockModal && (
         <div className="full-screen-card" style={fullScreenCardStyles}>
           <div className="modal-content p-4 bg-white rounded" style={modalContentStyles}>
+          <h1 class="text-danger">Deadlock detectado!</h1>
+
             <h5 className="modal-title">O que é um Deadlock?</h5>
             <p className="modal-body">
               Um deadlock ocorre quando dois ou mais processos estão esperando por um recurso que nunca será liberado,
