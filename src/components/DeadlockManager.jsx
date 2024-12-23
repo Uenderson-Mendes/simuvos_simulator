@@ -99,7 +99,7 @@ const fullScreenCardStyles = {
   left: 0,
   width: '100vw',
   height: '100vh',
-  backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fundo semi-transparente
+  backgroundColor: 'rgba(0, 0, 0, 0.76)', // Fundo semi-transparente
   zIndex: 1050,
   display: 'flex',
   alignItems: 'center',
