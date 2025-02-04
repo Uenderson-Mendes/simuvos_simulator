@@ -41,7 +41,7 @@ export const MemoryManager = ({ processes }) => {
       <ul>
         {processes.map((process) => (
           <li key={process.id}>
-            Processo #{process.id} alocou {memoryAllocations[process.id] || 0}MB de memória.
+            Processo {process.id} alocou {memoryAllocations[process.id] || 0}MB.
           </li>
           
         ))}

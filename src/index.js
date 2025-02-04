@@ -14,4 +14,9 @@ root.render(
   </React.StrictMode>
 );
 
+window.process = {
+  env: {
+    NODE_ENV: 'development' // ou 'production', dependendo do ambiente
+  }
+};
 
