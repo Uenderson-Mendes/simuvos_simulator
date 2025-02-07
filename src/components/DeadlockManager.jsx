@@ -66,7 +66,7 @@ export const DeadlockManager = ({ processes }) => {
       {/* Modal da página */}
       {showDeadlockModal && (
         <div className="full-screen-card" style={fullScreenCardStyles}>
-          <div className="modal-content p-4 bg-white rounded" style={{ ...modalContentStyles, marginTop: '-750px' }}>
+          <div className="modal-content p-4 bg-white rounded" style={{ ...modalContentStyles, marginTop: '-50px' }}>
             <h1 className="text-danger">Deadlock detectado!</h1>
             <h5 className="modal-title">O que é um Deadlock?</h5>
             <p className="modal-body">
@@ -94,8 +94,8 @@ export const DeadlockManager = ({ processes }) => {
 const fullScreenCardStyles = {
   position: 'fixed',
   top: '0',
-  left: '10px',
-  width: '100vw',
+  left: '0px',
+  width: '100%',
   height: '100vh',
   backgroundColor: 'rgba(0, 0, 0, 0.91)', // Fundo semi-transparente
   zIndex: 1050,

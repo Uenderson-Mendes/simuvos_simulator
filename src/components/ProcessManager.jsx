@@ -236,7 +236,7 @@ export const ProcessManager = () => {
         </div>
       </div>
       <div >
-        <div className="col-md-3 shadow position-absolute memory-container" style={{ right: 0, top: 80, height: '15vh', overflowY: 'auto', borderRight: '1px solid rgb(230, 225, 222)' }}>
+        <div className="col-md-3 shadow position-absolute memory-container responsivo_memoria" style={{ right: 0, top: 80, height: '25vh', overflowY: 'auto', borderRight: '1px solid rgb(230, 225, 222)' }}>
           <div className="shadow-sm rounded p-2" style={{
             backgroundColor: '#f8f9fa'
             , borderRadius: '0px'
@@ -266,10 +266,8 @@ export const ProcessManager = () => {
                   paginação, segmentação e swap, otimizando recursos e
                   evitando interferências entre processos. Isso é essencial
                   para suportar multitarefa e estabilidade do sistema.
-
-
                 </p>
-                <a href="https://www.youtube.com/watch?v=p7ErdZpKtRU    // " target="_blank" rel="noopener noreferrer">Mais informações</a>
+                <a href="https://www.youtube.com/watch?v=p7ErdZpKtRU" target="_blank" rel="noopener noreferrer">Mais informações</a>
                 <button className="close-btn" onClick={closeMemoryCard}>Fechar</button>
               </div>
             </div>
@@ -327,8 +325,6 @@ export const ProcessManager = () => {
 
       <br></br><br></br>
 
-      <hr style={{ marginTop: '30px', margin: '20px 0', borderTop: '2px solid #000000' }} />
-
       <h3 className="text-center">Processos</h3>
 
       <div className="status-reference">
@@ -345,7 +341,6 @@ export const ProcessManager = () => {
           Em Execução
         </div>
       </div>
-      <hr style={{ margin: '20px 0', borderTop: '2px solid #000000' }} />
 
       <div className="process-list mt-3">
         <div className="process-grid">
@@ -387,66 +382,66 @@ export const ProcessManager = () => {
 
             return (
               <div key={process.id} className="process-card" style={{ height: 'auto' }}>
-              <div className="titulo-status">
-                <span className={`status-${process.state.replace(' ', '-')}`}>
-                <span className="status-dot" style={{ backgroundColor: getStatusColor(process.state) }}></span>
-                {process.state}
-                </span>
-                <p className="titulo">Processo #{process.id} ({process.type})</p>
-              </div>
-              <p>Tempo Total: {process.time}s</p>
-              <p>Fatia de tempo original: {process.originalIntervalTime}ms</p>
-              <hr />
-              <div>
-                <h6>
-                <button onClick={toggleThreadsCard} className="btn btn-link">Threads</button>
-                </h6>
-                <p className="thread-status">
-                {process.state === 'pronto'
-                  ? `Processo está pronto com ${numThreads} threads prontas, aguardando execução.`
-                  : process.state === 'em espera'
-                  ? `Processo está esperando (bloqueado) com ${numThreads} threads prontas, sem execução.`
-                  : process.state === 'em execução'
-                  ? `Processo está em execução com ${numThreads} threads.`
-                  : `Processo está ${process.state} com ${numThreads} threads.`}
-                </p>
-
-                {showThreadsCard && (
-                <div className="thread-overlay">
-                  <div className="thread-container">
-                  <div className="thread-box">
-                    <h5 className="thread-title">Informações de Threads</h5>
-                    <hr className="thread-divider" />
-                    <h6 className="thread-subtitle">Detalhes das Threads em Execução</h6>
-
-                    Threads são unidades menores de execução dentro de um processo, permitindo realizar tarefas simultâneas compartilhando recursos. Por exemplo, em um navegador, uma thread pode carregar a página enquanto outra processa animações. Elas são rápidas e eficientes, usadas para paralelismo em programas, mas exigem cuidado com sincronização para evitar problemas como *deadlocks*.
-                    <hr></hr>
-                    <p className="thread-text">
-                      <h3>
-                    {process.state === 'pronto'
-                  ? `Processo está pronto com  "${numThreads}" threads prontas, aguardando execução.`
-                  : process.state === 'em espera'
-                  ? `Processo está esperando (bloqueado) com "${numThreads}" threads prontas, sem execução.`
-                  : process.state === 'em execução'
-                  ? `Processo está em execução com "${numThreads}" threads.`
-                  : `Processo está ${process.state} com ${numThreads} threads.`}</h3>
-                    </p><br></br><br></br><br></br><br></br><br></br>
-                   
-                    <button className="thread-close-btn" onClick={closeThreadsCard}>Fechar</button>
-                    <a href="https://www.youtube.com/watch?v=p7ErdZpKtRU" target="_blank"  className="thread_link">
-                    Mais        
-                    </a> 
-                  </div>
-                  
-                  </div>
+                <div className="titulo-status">
+                  <span className={`status-${process.state.replace(' ', '-')}`}>
+                    <span className="status-dot" style={{ backgroundColor: getStatusColor(process.state) }}></span>
+                    {process.state}
+                  </span>
+                  <p className="titulo">Processo #{process.id} ({process.type})</p>
                 </div>
-                )}
-              </div><hr></hr>
-              <div className="card-footer">
-                <button className="btn btn-danger btn-sm" onClick={() => handleStopProcess(process.id)}>
-                Fechar
-                </button>
-              </div>
+                <p>Tempo Total: {process.time}s</p>
+                <p>Fatia de tempo original: {process.originalIntervalTime}ms</p>
+                <hr />
+                <div>
+                  <h6>
+                    <button onClick={toggleThreadsCard} className="btn btn-link">Threads</button>
+                  </h6>
+                  <p className="thread-status">
+                    {process.state === 'pronto'
+                      ? `Processo está pronto com ${numThreads} threads prontas, aguardando execução.`
+                      : process.state === 'em espera'
+                        ? `Processo está esperando (bloqueado) com ${numThreads} threads prontas, sem execução.`
+                        : process.state === 'em execução'
+                          ? `Processo está em execução com ${numThreads} threads.`
+                          : `Processo está ${process.state} com ${numThreads} threads.`}
+                  </p>
+
+                  {showThreadsCard && (
+                    <div className="thread-overlay">
+                      <div className="thread-container">
+                        <div className="thread-box">
+                          <h5 className="thread-title">Informações de Threads</h5>
+                          <hr className="thread-divider" />
+                          <h6 className="thread-subtitle">Detalhes das Threads em Execução</h6>
+
+                          Threads são unidades menores de execução dentro de um processo, permitindo realizar tarefas simultâneas compartilhando recursos. Por exemplo, em um navegador, uma thread pode carregar a página enquanto outra processa animações. Elas são rápidas e eficientes, usadas para paralelismo em programas, mas exigem cuidado com sincronização para evitar problemas como *deadlocks*.
+                          <hr></hr>
+                          <p className="thread-text">
+                            <h3>
+                              {process.state === 'pronto'
+                                ? `Processo está pronto com  "${numThreads}" threads prontas, aguardando execução.`
+                                : process.state === 'em espera'
+                                  ? `Processo está esperando (bloqueado) com "${numThreads}" threads prontas, sem execução.`
+                                  : process.state === 'em execução'
+                                    ? `Processo está em execução com "${numThreads}" threads.`
+                                    : `Processo está ${process.state} com ${numThreads} threads.`}</h3>
+                          </p><br></br><br></br><br></br><br></br><br></br>
+
+                          <button className="thread-close-btn" onClick={closeThreadsCard}>Fechar</button>
+                          <a href="https://www.youtube.com/watch?v=p7ErdZpKtRU" target="_blank" className="thread_link">
+                            Mais
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="card-footer">
+                  <button className="btn btn-danger btn-sm" onClick={() => handleStopProcess(process.id)}>
+                    Fechar
+                  </button>
+                </div>
               </div>
             );
           })}
